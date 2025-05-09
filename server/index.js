@@ -29,6 +29,13 @@ app.post("/products/new" , (req,res) => {
     res.send(newProduct)
 })
 
+app.put("/products/:id/edit" , async (req,res) => {
+    const { id } = req.params;
+    const editedProduct = req.body;
+    const product = await Product.findByIdAndUpdate(id,req.body,{runValidators:true,new:true})
+    res.send(product);
+})
+
 app.listen(5000,()=>{
     console.log("Listening on port 5000")
 })

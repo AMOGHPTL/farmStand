@@ -29,6 +29,8 @@ const ProductDetails = () => {
           <p>name : {product.name}</p>
           <p>Price : {product.price}</p>
           <p>Category : {product.category}</p>
+          <a href={`/products/${product._id}/edit`}>Edit</a>
+          <br />
           <a href="/products">show all</a>
         </div>
       )}

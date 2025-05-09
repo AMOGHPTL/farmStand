@@ -7,7 +7,6 @@ const AddProduct = () => {
   const [category, setCategory] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     console.log(name, price, category);
     const sumbit = await axios.post("http://localhost:5000/products/new", {
       name: name,
@@ -39,10 +38,10 @@ const AddProduct = () => {
         <label htmlFor="category">Category</label>
         <select
           name="category"
-          value={category}
           onChange={(e) => setCategory(e.target.value)}
           id=""
         >
+          <option value=""> </option>
           <option value="fruit">fruit</option>
           <option value="vegetable">vegetable</option>
           <option value="dairy">dairy</option>

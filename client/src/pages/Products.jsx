@@ -26,7 +26,7 @@ const Products = () => {
       <button onClick={() => setCategory("fruit")}>fruit</button>
       <button onClick={() => setCategory("vegetable")}>vegetable</button>
       <button onClick={() => setCategory("dairy")}>dairy</button>
-      <h2>Products:</h2>
+      <h2>{category} Products:</h2>
       {!loading &&
         products.map((p) => (
           <div>

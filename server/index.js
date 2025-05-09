@@ -13,8 +13,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/products", async (req,res) => {
+    const { category } = req.query;
+    if(category){
+    const products = await Product.find({category:category});
+    res.send(products);
+    }else{
     const products = await Product.find({});
     res.send(products);
+    }
 })
 
 app.get("/products/:id", async (req,res) => {

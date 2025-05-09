@@ -76,6 +76,7 @@ const EditProduct = () => {
             </select>
             <button type="submit">Save</button>
           </form>
+          <a href={`/products/${id.id}`}>Cancel</a>
         </div>
       )}
     </div>

@@ -21,6 +21,12 @@ const ProductDetails = () => {
     fetchProduct();
   }, []);
 
+  const handleDelete = async (e) => {
+    const deletedProduct = await axios.delete(
+      `http://localhost:5000/products/${id.id}/delete`
+    );
+  };
+
   return (
     <div>
       {!loading && (
@@ -32,6 +38,9 @@ const ProductDetails = () => {
           <a href={`/products/${product._id}/edit`}>Edit</a>
           <br />
           <a href="/products">show all</a>
+          <form action="/products" onSubmit={handleDelete}>
+            <button type="submit">DELETE</button>
+          </form>
         </div>
       )}
     </div>

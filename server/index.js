@@ -36,6 +36,12 @@ app.put("/products/:id/edit" , async (req,res) => {
     res.send(product);
 })
 
+app.delete("/products/:id/delete", async (req,res) => {
+    const {id} = req.params;
+    const deleted  = await Product.findByIdAndDelete(id);
+    res.send(deleted);
+})
+
 app.listen(5000,()=>{
     console.log("Listening on port 5000")
 })

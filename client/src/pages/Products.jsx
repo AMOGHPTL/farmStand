@@ -28,6 +28,7 @@ const Products = () => {
             </li>
           </div>
         ))}
+      <br />
       <a href="/products/new">Add Product</a>
     </div>
   );

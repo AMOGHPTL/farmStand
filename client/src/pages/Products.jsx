@@ -18,15 +18,17 @@ const Products = () => {
 
   return (
     <div>
-      <h1>This is Products Page</h1>
+      <h1>Welcome to Farm Stand</h1>
       <h2>Products:</h2>
       {!loading &&
         products.map((p) => (
           <div>
-            <p>{p.name}</p>
-            <a href={`/products/${p._id}`}>Details</a>
+            <li>
+              <a href={`/products/${p._id}`}>{p.name}</a>
+            </li>
           </div>
         ))}
+      <a href="/products/new">Add Product</a>
     </div>
   );
 };

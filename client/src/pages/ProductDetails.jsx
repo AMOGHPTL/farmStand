@@ -23,11 +23,10 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <h1>This is Products Details page</h1>
-      <h2>Product:</h2>
       {!loading && (
         <div>
-          <p>Product : {product.name}</p>
+          <h1>{product.name}!</h1>
+          <p>name : {product.name}</p>
           <p>Price : {product.price}</p>
           <p>Category : {product.category}</p>
           <a href="/products">show all</a>

@@ -9,6 +9,9 @@ const app = express();
 
 app.use(cors());
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get("/products", async (req,res) => {
     const products = await Product.find({});
     res.send(products);
@@ -18,6 +21,12 @@ app.get("/products/:id", async (req,res) => {
     const {id} = req.params;
     const product = await Product.findById(id);
     res.send(product);
+})
+
+app.post("/products/new" , (req,res) => {
+    const newProduct  = new Product(req.body) ;
+    newProduct.save();
+    res.send(newProduct)
 })
 
 app.listen(5000,()=>{
